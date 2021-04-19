@@ -84,8 +84,8 @@ plt.figure(figsize=(20,4))
 sns.barplot(xlabel, ylabel, data=df, palette="cubehelix").set_title(title)
 ```
 ## Result 
-![]()
-![](https://github.com/Rajeshwari-Rudra/bigData-finalProject/blob/main/topWords.png?raw=true)
+![Output after processing the data](https://github.com/Rajeshwari-Rudra/bigData-finalProject/blob/main/output1.png?raw=true)
+![Output after Charting the data](https://github.com/Rajeshwari-Rudra/bigData-finalProject/blob/main/barGraph.png?raw=true)
 
 ## To create an image of word cloud
 * We need to import "Natural Language tool kit" and "word Cloud" libraries to show the highest word count for given the input file.Then, we need to define few functions to process the data and the result will shown in figure.
@@ -139,6 +139,9 @@ wordcloud_generator.create_word_cloud(clean_data)
 ```
 ## Result of word Cloud
 ![](https://github.com/Rajeshwari-Rudra/bigData-finalProject/blob/main/wordCloud.png?raw=true)
+
+## Conclusion
+Based on the obtained results, the top 15 words of 'The Project Gutenberg EBook of My Life and Work, by Henry Ford' are 'one','business','work', 'man', 'men','money', 'time','made','make','may','car','every','production','get' and 'much'.We can say that the author is mainly focussing on individuals who spend their most of the time in business or at work to make more productive by making money.
 
 ##  References
 - [Introduction to PySpark](https://github.com/denisecase/starting-spark)
