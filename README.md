@@ -37,12 +37,12 @@ lifeandworkRawRDD= sc.textFile("dbfs:/data/lifeandwork.txt")
 ```python
 lifeandworkMessyTokensRDD = lifeandworkRawRDD.flatMap(lambda eachLine: eachLine.lower().strip().split(" "))
 ```
-2. After changing the words to lowercase, we need to removing punctuations using regular expression by importing regular expression library
+2. After changing the words to lowercase, we need to remove punctuations using regular expression by importing "Regex" library
 ```python
 import re
 wordsAfterCleanedTokensRDD = lifeandworkMessyTokensRDD.map(lambda letter: re.sub(r'[^A-Za-z]', '', letter))
 ```
-3. Then, we need to filter the data by removing all the stop words from the data and then create a new RDD with the obtained result
+3. Then, we need to filter the data by removing all the stop words from the data and create a new RDD with the obtained result
 ```python
 from pyspark.ml.feature import StopWordsRemover
 remover = StopWordsRemover()
@@ -52,7 +52,7 @@ lifeAndWorkWordsRDD = wordsAfterCleanedTokensRDD.filter(lambda word: word not in
 lifeAndWorkRemoveSpaceRDD = lifeAndWorkWordsRDD.filter(lambda x: x != "")
 ```
 ## Step 3:- Processing the data
-* In this process, we will pair up each word is file and count it as 1 as an intermediate Key-value pairs and then we need to transform the words using reduceByKey() to get the total count of all distinct words. To get back to python, we use collect() and then print the obtained results.
+* In this process, we will pair up each word of the file and count it to 1 as an intermediate Key-value pairs and then we need to transform the words using reduceByKey() to get the total count of all the distinct words. To get back to python, we use collect() and then print the obtained results.
 ```python
 lifeAndWorkPairsRDD = lifeAndWorkRemoveSpaceRDD.map(lambda eachWord: (eachWord,1))
 # transforming the words using reduceByKey() to get (word,count) results
@@ -88,7 +88,7 @@ sns.barplot(xlabel, ylabel, data=df, palette="cubehelix").set_title(title)
 ![Output after Charting the data](https://github.com/Rajeshwari-Rudra/bigData-finalProject/blob/main/barGraph.png?raw=true)
 
 ## To create an image of word cloud
-* We need to import "Natural Language tool kit" and "word Cloud" libraries to show the highest word count for given the input file.Then, we need to define few functions to process the data and the result will shown in figure.
+* We need to import "Natural Language tool kit" and "word Cloud" libraries to show the highest word count for the given input file.Then, we need to define few functions to process the data and the result will be shown in figure.
 ```python
 import matplotlib.pyplot as plt
 import nltk
