@@ -16,7 +16,7 @@ https://databricks-prod-cloudfront.cloud.databricks.com/public/4027ec902e239c93e
 
 ## Commands to Start this project
 ------------------------------------------------------------------------
-## Step 1:-  Data Injection
+## Step 1:-  Data Ingestion
 1. Initially, import all the required libraries and start fetching the data from the URL 
 ```python
 import urllib.request 
@@ -144,7 +144,7 @@ wordcloud_generator.create_word_cloud(clean_data)
 Based on the obtained results, the top 15 words of 'The Project Gutenberg EBook of My Life and Work, by Henry Ford' are 'one','business','work', 'man', 'men','money', 'time','made','make','may','car','every','production','get' and 'much'.We can say that the author is mainly focussing on individuals who spend their most of the time in business or at work to make more productive by making money.
 
 ##  References
-- [Introduction to PySpark](https://github.com/denisecase/starting-spark)
+- [Introduction to PySpark - Dr.Case](https://github.com/denisecase/starting-spark)
 - [To get the ouput in descending order](https://stackoverflow.com/questions/41306684/get-top-5-largest-from-list-of-tuples-python/41306701)
 - [Spark Key Terms](https://sparkbyexamples.com/)
 - [To build an image using  WordCloud](https://www.section.io/engineering-education/word-cloud/)
